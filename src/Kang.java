@@ -1,3 +1,4 @@
+import java.math.BigDecimal;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 public class Kang {
@@ -61,17 +62,24 @@ public class Kang {
     public void showfiles(){
             System.out.append("\n");
             System.out.println("*********** Files **********");
-            System.out.println("* 1) fileOne.txt " + "["  + files[0] + " MB]");
-            System.out.println("* 2) fileTwo.txt " + "["  + files[1] + " MB]");
-            System.out.println("* 3) fileThree.txt " + "["  + files[2] + " MB]");
-            System.out.println("* 4) fileFour.txt " + "["  + files[3] + " MB]");
-            System.out.println("* 5) fileFive.txt " + "["  + files[4] + " MB]");
+            BigDecimal bd = new BigDecimal(files[0]);
+            System.out.println("* 1) fileOne.txt " + "["  + bd.setScale(2,BigDecimal.ROUND_DOWN).doubleValue() + " MB]");
+            BigDecimal bd1 = new BigDecimal(files[1]);
+            System.out.println("* 2) fileTwo.txt " + "["  + bd1.setScale(2,BigDecimal.ROUND_DOWN).doubleValue() + " MB]");
+            BigDecimal bd2 = new BigDecimal(files[2]);
+            System.out.println("* 3) fileThree.txt " + "["  + bd2.setScale(2,BigDecimal.ROUND_DOWN).doubleValue() + " MB]");
+            BigDecimal bd3= new BigDecimal(files[3]);
+            System.out.println("* 4) fileFour.txt " + "["  + bd3.setScale(2,BigDecimal.ROUND_DOWN).doubleValue() + " MB]");
+            BigDecimal bd4 = new BigDecimal(files[4]);
+            System.out.println("* 5) fileFive.txt " + "["  + bd4.setScale(2,BigDecimal.ROUND_DOWN).doubleValue() + " MB]");
             System.out.println("****************************");
             System.out.append("\n");
         }
 
     public void Downloadfiles(){
         double speed = Math.random() * (6 - 1) + 1;
+        BigDecimal bd = new BigDecimal(speed);
+        speed = bd.setScale(2,BigDecimal.ROUND_DOWN).doubleValue();
         System.out.println("Which file would you like to download? ");
         ChooseFiles();
         System.out.append("\n");
