@@ -77,6 +77,9 @@ public class Kang {
         }
 
     public void Downloadfiles(){
+        /**
+         * Test for Y7000p
+         * */
         double speed = Math.random() * (6 - 1) + 1;
         BigDecimal bd = new BigDecimal(speed);
         speed = bd.setScale(2,BigDecimal.ROUND_DOWN).doubleValue();
